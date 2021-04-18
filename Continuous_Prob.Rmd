@@ -29,7 +29,7 @@ Defining the empirical distribution function:
 F <- function(a) mean(x<=a)
 ```
 
-## eCDF approach
+### eCDF approach
 
 If one of the male students in this dataset is chosen, what is the
 chance that he is taller than 70.5 inches?
@@ -43,7 +43,7 @@ Using eCDF we can simply answer this:
 Using this cumulative probability function we can compute the
 probability of any subset within the data.
 
-## Example
+### Example
 
 What is the probability of a student being between 65 and 70 in?:
 
@@ -51,7 +51,7 @@ What is the probability of a student being between 65 and 70 in?:
 F(70) - F(65)
 ```
 
-## Notes
+### Notes
 
 The cumulative distribution function (CDF) is a distribution function
 for continuous data (x) that reports the proportion of the data below
@@ -71,8 +71,31 @@ and *b*:
 
 $$F(b) - F(a)$$
 
+## Theoretical Distribution
 
+The cumulative distribution for the normal distribution is defined in base R,
+and can be obtained with the function `pnorm()`.
 
+`pnorm(a, avg, s)` gives the value of the cumulative distribution function $F(a)$ for the normal distribution defined by average *avg* and standard deviation *s*.
 
+This is quite useful as we wont require the entire data set to determine the probability of distribution for continuous variables. All that is required in this are *avg*, and *s*.
 
+Using the normal distribution what is the probability that a randomly selected student is taller than 70.5 inches:
+
+```{r echo=TRUE}
+1 - pnorm(70.5, mean(x), sd(x))
+```
+
+The proportion of students reporting each unique height:
+
+```{r}
+plot(prop.table(table(x)), xlab = "a = Height in inches", ylab = "Pr(X = a)")
+```
+
+This is the distribution function for the height data set where each reported
+height is defined by the proportion of students reporting it.
+
+### Notes
+
+If we treat the height data as discrete rather than categorical, we will notice that the data are not very useful because interger values are more common than expected due to rounding. This is called *discretization*.
 
