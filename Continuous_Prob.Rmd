@@ -1,0 +1,78 @@
+---
+title: "Continuous_Probability"
+author: "Umberto Fasci"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Continuous Probability
+
+Here, the vector x is characterized as male heights in the height
+dataset:
+
+```{r}
+library(tidyverse)
+library(dslabs)
+data(heights)
+x <- heights %>% filter(sex == "Male") %>% .$height
+```
+
+Defining the empirical distribution function:
+
+```{r}
+F <- function(a) mean(x<=a)
+```
+
+## eCDF approach
+
+If one of the male students in this dataset is chosen, what is the
+chance that he is taller than 70.5 inches?
+
+Using eCDF we can simply answer this:
+
+```{r echo=TRUE}
+1 - F(70.5)
+```
+
+Using this cumulative probability function we can compute the
+probability of any subset within the data.
+
+## Example
+
+What is the probability of a student being between 65 and 70 in?:
+
+```{r echo=TRUE}
+F(70) - F(65)
+```
+
+## Notes
+
+The cumulative distribution function (CDF) is a distribution function
+for continuous data (x) that reports the proportion of the data below
+*a* for all values of *a*:
+
+$$F(a) = Pr(x \le a)$$
+
+The CDF is the probability distribution function for continuous
+variables. For example, to determine the probability that a male student
+is taller than 70.5 inches given a vector of male heights *x*, we can
+use the CDF:
+
+$$Pr(x > 70.5) = 1-Pr(x \le 70.5) = 1 - F(70.5)$$
+
+Furthermore, the probability that an observation is in between two values *a*,
+and *b*:
+
+$$F(b) - F(a)$$
+
+
+
+
+
+
