@@ -99,3 +99,23 @@ height is defined by the proportion of students reporting it.
 
 If we treat the height data as discrete rather than categorical, we will notice that the data are not very useful because interger values are more common than expected due to rounding. This is called *discretization*.
 
+## Probability Density
+
+
+$$Pr(X = 4) = 1/6$$
+
+$$F(4) = Pr(X \le 4) = Pr(X = 4) + Pr(X = 3) + Pr(X = 2) + Pr(X = 1)$$
+
+$$F(a) = Pr(X \le a) = \int_{-\infty}^{a} f(x) dx$$
+
+
+
+
+
+
+
+
+
+
+
+
