@@ -101,14 +101,25 @@ If we treat the height data as discrete rather than categorical, we will notice 
 
 ## Probability Density
 
+For categorical data, one can define the probability of a category. 
+Example: a roll of a die (X) can be 1, 2, 3, 4, 5, or 6.
+The probability of for is defined as follows:
 
 $$Pr(X = 4) = 1/6$$
 
+Meanwhile, the CDF can be defined by adding up the probability:
+
 $$F(4) = Pr(X \le 4) = Pr(X = 4) + Pr(X = 3) + Pr(X = 2) + Pr(X = 1)$$
+
+The probability density at x is defined as the function:
 
 $$F(a) = Pr(X \le a) = \int_{-\infty}^{a} f(x) dx$$
 
+### Example
 
+Using the normal approximation to estimate the probability of someone being
+taller than 76 inches, we can use the probability density. In R one could get
+the probability density for the normal distribution using the function `dnorm()`.
 
 
 

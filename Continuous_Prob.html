@@ -228,6 +228,19 @@ x &lt;- heights %&gt;% filter(sex == &quot;Male&quot;) %&gt;% .$height</code></p
 <p>If we treat the height data as discrete rather than categorical, we will notice that the data are not very useful because interger values are more common than expected due to rounding. This is called <em>discretization</em>.</p>
 </div>
 </div>
+<div id="probability-density" class="section level2">
+<h2>Probability Density</h2>
+<p>For categorical data, one can define the probability of a category. Example: a roll of a die (X) can be 1, 2, 3, 4, 5, or 6. The probability of for is defined as follows:</p>
+<p><span class="math display">\[Pr(X = 4) = 1/6\]</span></p>
+<p>Meanwhile, the CDF can be defined by adding up the probability:</p>
+<p><span class="math display">\[F(4) = Pr(X \le 4) = Pr(X = 4) + Pr(X = 3) + Pr(X = 2) + Pr(X = 1)\]</span></p>
+<p>The probability density at x is defined as the function:</p>
+<p><span class="math display">\[F(a) = Pr(X \le a) = \int_{-\infty}^{a} f(x) dx\]</span></p>
+<div id="example-1" class="section level3">
+<h3>Example</h3>
+<p>Using the normal approximation to estimate the probability of someone being taller than 76 inches, we can use the probability density. In R one could get the probability density for the normal distribution using the function <code>dnorm()</code>.</p>
+</div>
+</div>
 
 
 
