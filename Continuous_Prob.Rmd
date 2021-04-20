@@ -1,10 +1,7 @@
 ---
 title: "Continuous_Probability"
 author: "Umberto Fasci"
-output: github_document
-editor_options: 
-  markdown: 
-    wrap: 72
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
