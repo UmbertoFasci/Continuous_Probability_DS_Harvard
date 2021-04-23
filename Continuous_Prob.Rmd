@@ -154,8 +154,19 @@ data.frame(simulated_heights=simulated_heights) %>% ggplot(aes(simulated_heights
 ```
 
 
-This is one of the most useful functions in R, allowing us to generate data that
-mimics naturally occurring events
+This is one of the most useful functions in R, allowing us to generate data that mimics naturally occurring events.
+
+### Example
+
+If we pick 800 males at random, what is the distribution of the tallest person? How rare is it when the tallest person is seven foot high.
+
+```{r}
+B <- 10000
+tallest <- replicate(B, {
+  simulated_data <- rnorm(800, avg, s)
+  max(simulated_data)
+})
+```
 
 
 
